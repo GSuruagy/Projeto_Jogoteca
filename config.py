@@ -1,4 +1,4 @@
-SECRET_KEY = 'alura'
+SECRET_KEY = 'master'
 
 SQLALCHEMY_DATABASE_URI = \
     '{SGBD}://{usuario}:{senha}@{servidor}/{database}'.format(
