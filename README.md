@@ -1,6 +1,6 @@
-README: Configurando Flask, SQLAlchemy, CSRFProtect e Bcrypt
+# Configurando Flask, SQLAlchemy, CSRFProtect e Bcrypt
 
-Índice
+# Índice
 
 1. Introdução
 2. Pré-requisitos
@@ -12,18 +12,18 @@ README: Configurando Flask, SQLAlchemy, CSRFProtect e Bcrypt
 8. Exemplo de Código
 9. Resolução de Problemas Comuns
 
-1. Introdução <a name="introducao"></a>
+# 1. Introdução <a name="introducao"></a>
 
 Este guia descreve os passos necessários para configurar um aplicativo Flask com SQLAlchemy para gerenciamento de banco de dados, CSRFProtect para proteção contra ataques CSRF e Bcrypt para hashing de senhas.
 
-2. Pré-requisitos <a name="pre-requisitos"></a>
+# 2. Pré-requisitos <a name="pre-requisitos"></a>
 Antes de iniciar, você precisará dos seguintes itens:
 
 Python 3.6 ou superior instalado.
 Acesso à internet para instalar os pacotes necessários.
 Um ambiente virtual configurado (recomendado).
 
-3. Instalação dos Pacotes Necessários <a name="instalacao-pacotes"></a>
+# 3. Instalação dos Pacotes Necessários <a name="instalacao-pacotes"></a>
 Crie e ative um ambiente virtual:
 
 python3 -m venv venv
@@ -33,7 +33,7 @@ Instale Flask e as extensões necessárias:
 
 pip install Flask Flask-SQLAlchemy Flask-WTF Flask-Bcrypt
 
-4. Configuração do Aplicativo Flask <a name="configuracao-flask"></a>
+# 4. Configuração do Aplicativo Flask <a name="configuracao-flask"></a>
 
 Crie um arquivo chamado app.py.
 Inicialize o aplicativo Flask:
@@ -43,7 +43,7 @@ from flask import Flask
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'sua_chave_secreta'
 
-5. Configuração do SQLAlchemy <a name="configuracao-sqlalchemy"></a>
+# 5. Configuração do SQLAlchemy <a name="configuracao-sqlalchemy"></a>
 
 Configure o banco de dados no app.py:
 
@@ -60,7 +60,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
 
-6. Configuração do CSRFProtect <a name="configuracao-csrf"></a>
+# 6. Configuração do CSRFProtect <a name="configuracao-csrf"></a>
 
 Proteja o aplicativo contra CSRF:
 
@@ -68,7 +68,7 @@ from flask_wtf.csrf import CSRFProtect
 
 csrf = CSRFProtect(app)
 
-7. Configuração do Bcrypt <a name="configuracao-bcrypt"></a>
+# 7. Configuração do Bcrypt <a name="configuracao-bcrypt"></a>
 
 Configure o Bcrypt para hashing de senhas:
 
@@ -76,7 +76,7 @@ from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt(app)
 
-8. Exemplo de Código <a name="exemplo-codigo"></a>
+# 8. Exemplo de Código <a name="exemplo-codigo"></a>
 
 Aqui está um exemplo completo combinando todas as configurações acima:
 
@@ -106,7 +106,7 @@ def home():
 if __name__ == '__main__':
     app.run(debug=True)
 
-9. Resolução de Problemas Comuns <a name="resolucao-problemas"></a>
+# 9. Resolução de Problemas Comuns <a name="resolucao-problemas"></a>
 
 Problemas com SQLAlchemy
 
@@ -131,20 +131,20 @@ Certifique-se de que a senha e o hash estão no formato correto.
 
 Seguindo estes passos, você conseguirá configurar seu aplicativo Flask com suporte a SQLAlchemy, CSRFProtect e Bcrypt, garantindo uma aplicação segura e eficiente.
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Instalando e Configurando mysql.connector e flask_bcrypt em uma Máquina Virtual
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Instalando e Configurando mysql.connector e flask_bcrypt em uma Máquina Virtual
 
 este guia descreve os passos necessários para instalar e configurar o mysql.connector e o flask_bcrypt em uma máquina virtual. Esses componentes são úteis para conectar seu aplicativo Python a um banco de dados MySQL e para implementar hash de senhas com Flask.
 
 Antes de iniciar, você precisará dos seguintes itens:
 
-2. Pré-requisitos
+# 2. Pré-requisitos
 
 Uma máquina virtual configurada (por exemplo, usando VirtualBox ou VMware).
 Acesso à internet para baixar os pacotes necessários.
 Python 3.6 ou superior instalado na máquina virtual.
 
-3. Configuração da Máquina Virtual
+# 3. Configuração da Máquina Virtual
 
 Criação da Máquina Virtual:
 
@@ -159,13 +159,13 @@ bash
 
 sudo apt update && sudo apt upgrade -y
 
-4. Instalação do MySQL Connector
+# 4. Instalação do MySQL Connector
 
 Para instalar o mysql-connector-python, utilize o seguinte comando:
 
 pip install mysql-connector-python
 
-5. Configuração do MySQL Connector
+# 5. Configuração do MySQL Connector
 
 Após a instalação, você pode configurar a conexão com o MySQL utilizando o seguinte exemplo de código:
 
@@ -186,13 +186,13 @@ except mysql.connector.Error as err:
     else:
         print(err)
 
-6. Instalação do Flask-Bcrypt 
+# 6. Instalação do Flask-Bcrypt 
 
 Para instalar o Flask-Bcrypt, utilize o comando:
 
 pip install Flask-Bcrypt
 
-7. Exemplo de Uso
+# 7. Exemplo de Uso
 
 Abaixo está um exemplo de como usar o Flask-Bcrypt para gerar um hash de senha:
 
@@ -200,12 +200,12 @@ from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt()
 
-# Gera um hash para a senha
+Gera um hash para a senha
 senha_plana = "minha_senha_secreta"
 senha_hash = bcrypt.generate_password_hash(senha_plana).decode('utf-8')
 print(f"Senha Hashed: {senha_hash}")
 
-8. Resolução de Problemas Comuns
+# 8. Resolução de Problemas Comuns
 
 Problemas de Conexão com o MySQL
 
